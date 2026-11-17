@@ -8,6 +8,8 @@ causes: P(visit | emailed) − P(visit | not emailed). LiftLens trains three upl
 real randomised experiment, picks one by cross-validation, measures it on an untouched test set with
 bootstrap confidence intervals, and explains it with SHAP.
 
+**Walkthrough:** [`demo.ipynb`](demo.ipynb) trains the chosen model and shows every plot in about a minute.
+
 ## Results (held-out test set, 12,800 customers)
 
 | Model | CV Qini (choice) | Test Qini | 95% CI | Uplift in top 30% | Extra visits vs random 30% |
@@ -88,6 +90,7 @@ email. Outcomes were tracked for two weeks.
 pip install -r requirements.txt
 python liftlens.py     # downloads the data, checks its SHA-256, writes results/ in about 2 minutes on a 2-core CPU
 pytest -q              # checks the uplift metrics on synthetic data with a known effect
+jupyter notebook demo.ipynb   # the walkthrough
 ```
 
 `liftlens.py` holds the whole pipeline: data, learners, metrics, bootstrap, SHAP and figures. Every number
