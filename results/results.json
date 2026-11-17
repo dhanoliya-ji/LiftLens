@@ -1,0 +1,587 @@
+{
+  "dataset": {
+    "name": "Hillstrom MineThatData E-Mail Analytics Challenge (2008)",
+    "rows": 64000,
+    "treatment": "any email",
+    "outcome": "visit",
+    "split_sizes": {
+      "train": 40960,
+      "valid": 10240,
+      "test": 12800
+    },
+    "test_ate_visit": 0.06092009221793601,
+    "test_ate_conversion": 0.0051416146889738945
+  },
+  "max_abs_smd": 0.008811238997617949,
+  "balance_smd": {
+    "recency": 0.006004340077750869,
+    "history": 0.0070634545705258595,
+    "mens": -0.006610559041797893,
+    "womens": 0.00626509090065978,
+    "newbie": 0.0008356308969718988,
+    "log_history": 0.0026588484647705564,
+    "zip_code=Rural": 0.008811238997617949,
+    "zip_code=Surburban": -0.006404781560239178,
+    "zip_code=Urban": 0.0001015359873930745,
+    "channel=Multichannel": -0.004733100092978112,
+    "channel=Phone": 0.00019372228355604056,
+    "channel=Web": 0.0029215455929629186
+  },
+  "learners": {
+    "s_learner": {
+      "name": "S-learner",
+      "chosen_params": {
+        "max_depth": 4,
+        "learning_rate": 0.05,
+        "min_child_weight": 200
+      },
+      "search": [
+        {
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.08960769709193006,
+          "cv_qini_std": 0.05381752611440309
+        },
+        {
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.09083311048201877,
+          "cv_qini_std": 0.05285463694590218
+        },
+        {
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.08498741441035637,
+          "cv_qini_std": 0.05531205471965748
+        },
+        {
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.0860202149608015,
+          "cv_qini_std": 0.06130775332910107
+        },
+        {
+          "params": {
+            "max_depth": 4,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.07981844359375785,
+          "cv_qini_std": 0.05344554068998142
+        },
+        {
+          "params": {
+            "max_depth": 4,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.09161065912022057,
+          "cv_qini_std": 0.051451800039686475
+        }
+      ],
+      "cv_qini": 0.09161065912022057,
+      "test_qini_by_seed": [
+        0.12246563202808232,
+        0.12146411632610958,
+        0.14200797059609177,
+        0.13429358765117003,
+        0.13264669994624467
+      ],
+      "test_qini_seed_mean": 0.13057560130953966,
+      "test_qini_seed_std": 0.007714955603930133,
+      "test": {
+        "qini": 0.12246563202808232,
+        "uplift_at_30": 0.08671750192318689,
+        "incremental_at_k": 332.99520738503765,
+        "gain_vs_random": 0.42346307705777964
+      },
+      "test_conversion_qini": 0.06734471015370183,
+      "share_predicted_negative": 0.0,
+      "bootstrap": {
+        "qini_ci95": [
+          0.04399665337628874,
+          0.20026800282654397
+        ],
+        "uplift_at_k_ci95": [
+          0.06291549062753896,
+          0.10835201109490775
+        ],
+        "gain_vs_random_ci95": [
+          0.10558038193986977,
+          0.7391963489374546
+        ],
+        "p_gain_vs_random_le_0": 0.005
+      }
+    },
+    "t_learner": {
+      "name": "T-learner",
+      "chosen_params": {
+        "max_depth": 4,
+        "learning_rate": 0.05,
+        "min_child_weight": 200
+      },
+      "search": [
+        {
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.0615870643159518,
+          "cv_qini_std": 0.043995586605549045
+        },
+        {
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.059660415609084284,
+          "cv_qini_std": 0.04945682504292677
+        },
+        {
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.0571048521407735,
+          "cv_qini_std": 0.036038540249560345
+        },
+        {
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.06298069760889155,
+          "cv_qini_std": 0.05120635441789088
+        },
+        {
+          "params": {
+            "max_depth": 4,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.045141692987235395,
+          "cv_qini_std": 0.027704459065146993
+        },
+        {
+          "params": {
+            "max_depth": 4,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.06354033948223456,
+          "cv_qini_std": 0.052872032077779824
+        }
+      ],
+      "cv_qini": 0.06354033948223456,
+      "test_qini_by_seed": [
+        0.13834716875934977,
+        0.13210047354691992,
+        0.13121730457435957,
+        0.136693697577801,
+        0.1306965328216551
+      ],
+      "test_qini_seed_mean": 0.13381103545601708,
+      "test_qini_seed_std": 0.0031061176682391596,
+      "test": {
+        "qini": 0.13834716875934977,
+        "uplift_at_30": 0.08559273451407537,
+        "incremental_at_k": 328.6761005340494,
+        "gain_vs_random": 0.40500008121910347
+      },
+      "test_conversion_qini": 0.02605697865163054,
+      "share_predicted_negative": 0.005390625,
+      "bootstrap": {
+        "qini_ci95": [
+          0.05950343502377198,
+          0.22415430754205465
+        ],
+        "uplift_at_k_ci95": [
+          0.06572596069308889,
+          0.11064420641886859
+        ],
+        "gain_vs_random_ci95": [
+          0.12493948190077676,
+          0.7624971787626457
+        ],
+        "p_gain_vs_random_le_0": 0.003
+      }
+    },
+    "x_learner": {
+      "name": "X-learner",
+      "chosen_params": {
+        "max_depth": 2,
+        "learning_rate": 0.05,
+        "min_child_weight": 200
+      },
+      "search": [
+        {
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.07977729901477489,
+          "cv_qini_std": 0.03899735519258349
+        },
+        {
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.08102584034932014,
+          "cv_qini_std": 0.04073782917794734
+        },
+        {
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.0779305323255787,
+          "cv_qini_std": 0.02382206101039464
+        },
+        {
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.07676803681351994,
+          "cv_qini_std": 0.021908368788878238
+        },
+        {
+          "params": {
+            "max_depth": 4,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.07385120969962944,
+          "cv_qini_std": 0.033544107418442604
+        },
+        {
+          "params": {
+            "max_depth": 4,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.06625904015371817,
+          "cv_qini_std": 0.030879952688520135
+        }
+      ],
+      "cv_qini": 0.08102584034932014,
+      "test_qini_by_seed": [
+        0.15250206373101038,
+        0.16400808149941037,
+        0.16340095251256093,
+        0.1772162774281817,
+        0.17327366300212838
+      ],
+      "test_qini_seed_mean": 0.16608020763465836,
+      "test_qini_seed_std": 0.008620857929090836,
+      "test": {
+        "qini": 0.15250206373101038,
+        "uplift_at_30": 0.09060933599117495,
+        "incremental_at_k": 347.93985020611177,
+        "gain_vs_random": 0.4873473215869142
+      },
+      "test_conversion_qini": 0.24889416759663963,
+      "share_predicted_negative": 0.0,
+      "bootstrap": {
+        "qini_ci95": [
+          0.07542477510312315,
+          0.23128384529366722
+        ],
+        "uplift_at_k_ci95": [
+          0.06961178807650915,
+          0.11278687178700819
+        ],
+        "gain_vs_random_ci95": [
+          0.20486761339060774,
+          0.8485649157339409
+        ],
+        "p_gain_vs_random_le_0": 0.0
+      }
+    },
+    "response": {
+      "name": "Response model",
+      "chosen_params": {
+        "max_depth": 2,
+        "learning_rate": 0.05,
+        "min_child_weight": 200
+      },
+      "search": [
+        {
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.05626383311643385,
+          "cv_qini_std": 0.044830105310158776
+        },
+        {
+          "params": {
+            "max_depth": 2,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.057683778828755285,
+          "cv_qini_std": 0.044296154044535685
+        },
+        {
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.055165302400442595,
+          "cv_qini_std": 0.04252460859772676
+        },
+        {
+          "params": {
+            "max_depth": 3,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.057180690722427,
+          "cv_qini_std": 0.042597984292257904
+        },
+        {
+          "params": {
+            "max_depth": 4,
+            "learning_rate": 0.05,
+            "min_child_weight": 50
+          },
+          "cv_qini_mean": 0.0533575679580174,
+          "cv_qini_std": 0.04249697478720584
+        },
+        {
+          "params": {
+            "max_depth": 4,
+            "learning_rate": 0.05,
+            "min_child_weight": 200
+          },
+          "cv_qini_mean": 0.0574608960408574,
+          "cv_qini_std": 0.04301461458816898
+        }
+      ],
+      "cv_qini": 0.057683778828755285,
+      "test_qini_by_seed": [
+        0.07464341989729742,
+        0.07820554801805993,
+        0.07336419797508113,
+        0.07563479349117588,
+        0.07261004414793251
+      ],
+      "test_qini_seed_mean": 0.07489160070590936,
+      "test_qini_seed_std": 0.001956253329552906,
+      "test": {
+        "qini": 0.07464341989729742,
+        "uplift_at_30": 0.07926632301006267,
+        "incremental_at_k": 304.38268035864064,
+        "gain_vs_random": 0.3011523805068237
+      },
+      "test_conversion_qini": 0.2213655521906756,
+      "share_predicted_negative": 0.0,
+      "bootstrap": {
+        "qini_ci95": [
+          -0.004335587199960245,
+          0.15257896956216652
+        ],
+        "uplift_at_k_ci95": [
+          0.05577624082499001,
+          0.10499099761243123
+        ],
+        "gain_vs_random_ci95": [
+          -0.02070891975578419,
+          0.6535198720620088
+        ],
+        "p_gain_vs_random_le_0": 0.034
+      }
+    }
+  },
+  "targeting": {
+    "budget_share": 0.3,
+    "customers_targeted": 3840,
+    "random_incremental_visits": 233.93315411687428
+  },
+  "best_learner": "s_learner",
+  "best_vs_response": {
+    "qini_diff": 0.0478222121307849,
+    "qini_diff_ci95": [
+      -0.012417799251355482,
+      0.11196806844948577
+    ],
+    "p_diff_le_0": 0.067
+  },
+  "deciles": [
+    {
+      "decile": 1,
+      "customers": 1280,
+      "treated": 819,
+      "control": 461,
+      "observed_uplift": 0.11189244594884509,
+      "predicted_uplift": 0.11058914661407471
+    },
+    {
+      "decile": 2,
+      "customers": 1280,
+      "treated": 850,
+      "control": 430,
+      "observed_uplift": 0.06021887824897401,
+      "predicted_uplift": 0.07653411477804184
+    },
+    {
+      "decile": 3,
+      "customers": 1280,
+      "treated": 868,
+      "control": 412,
+      "observed_uplift": 0.09189745425260615,
+      "predicted_uplift": 0.06886934489011765
+    },
+    {
+      "decile": 4,
+      "customers": 1280,
+      "treated": 829,
+      "control": 451,
+      "observed_uplift": 0.03864351835754348,
+      "predicted_uplift": 0.06197843700647354
+    },
+    {
+      "decile": 5,
+      "customers": 1280,
+      "treated": 854,
+      "control": 426,
+      "observed_uplift": 0.0946168816175743,
+      "predicted_uplift": 0.05611468106508255
+    },
+    {
+      "decile": 6,
+      "customers": 1280,
+      "treated": 869,
+      "control": 411,
+      "observed_uplift": 0.07029082285480696,
+      "predicted_uplift": 0.0517522469162941
+    },
+    {
+      "decile": 7,
+      "customers": 1280,
+      "treated": 877,
+      "control": 403,
+      "observed_uplift": 0.0493788037834825,
+      "predicted_uplift": 0.04672055318951607
+    },
+    {
+      "decile": 8,
+      "customers": 1280,
+      "treated": 855,
+      "control": 425,
+      "observed_uplift": 0.040426556587547305,
+      "predicted_uplift": 0.04123329371213913
+    },
+    {
+      "decile": 9,
+      "customers": 1280,
+      "treated": 855,
+      "control": 425,
+      "observed_uplift": 0.011186790505675961,
+      "predicted_uplift": 0.03578738123178482
+    },
+    {
+      "decile": 10,
+      "customers": 1280,
+      "treated": 863,
+      "control": 417,
+      "observed_uplift": 0.052607739995720694,
+      "predicted_uplift": 0.02589370310306549
+    }
+  ],
+  "top_decile_uplift_ci95": [
+    0.0701247491909912,
+    0.15906792635364939
+  ],
+  "explanation": {
+    "learner": "s_learner",
+    "surrogate_r2_test": 0.9920865893363953,
+    "importance": [
+      {
+        "feature": "womens",
+        "mean_abs_shap": 0.01762045919895172,
+        "direction": 0.9769049322755424
+      },
+      {
+        "feature": "mens",
+        "mean_abs_shap": 0.009331192821264267,
+        "direction": 0.8412294350156532
+      },
+      {
+        "feature": "newbie",
+        "mean_abs_shap": 0.004520050249993801,
+        "direction": -0.8779913805606454
+      },
+      {
+        "feature": "history",
+        "mean_abs_shap": 0.004496138542890549,
+        "direction": 0.5188266618256268
+      },
+      {
+        "feature": "recency",
+        "mean_abs_shap": 0.003746887668967247,
+        "direction": -0.6058654503141506
+      },
+      {
+        "feature": "channel=Web",
+        "mean_abs_shap": 0.0016605842392891645,
+        "direction": 0.8680439059625434
+      },
+      {
+        "feature": "zip_code=Rural",
+        "mean_abs_shap": 0.0015937344869598746,
+        "direction": -0.9032796195318779
+      },
+      {
+        "feature": "channel=Phone",
+        "mean_abs_shap": 0.0010051617864519358,
+        "direction": -0.21637588791324783
+      },
+      {
+        "feature": "zip_code=Urban",
+        "mean_abs_shap": 0.001002177712507546,
+        "direction": 0.8557198688501308
+      },
+      {
+        "feature": "channel=Multichannel",
+        "mean_abs_shap": 0.000553380639757961,
+        "direction": -0.8577230228470193
+      },
+      {
+        "feature": "zip_code=Surburban",
+        "mean_abs_shap": 0.00026902160607278347,
+        "direction": -0.24881079213685156
+      },
+      {
+        "feature": "log_history",
+        "mean_abs_shap": 0.0,
+        "direction": 0.0
+      }
+    ]
+  },
+  "runtime_seconds": 127.2
+}
